@@ -44,6 +44,8 @@ def evolve(agents):
 
 def main(args):
     project_dir = "../projects/" + args.project
+    if not os.path.exists(project_dir):
+        os.makedirs(project_dir)
     with open(project_dir + '/config.yaml', 'w') as outfile:
         yaml.dump(args, outfile)
 

@@ -104,6 +104,6 @@ class MetaAgent:
             mutation = random.randint(-1,2)
             self.strategy = np.max([1, np.abs(self.strategy + mutation)])
         elif self.metastrategy == "benefit":
-            mutation = np.random.uniform(low=0.1, high=0.3, size=1)[0]
+            mutation = np.random.uniform(low=-0.05, high=0.05, size=1)[0]
             self.strategy = np.max([0, np.abs(self.strategy + mutation)])
 
