@@ -70,6 +70,8 @@ def main(args):
             agents = evolve(agents)
             keep_log(agents)
 
+        log["agents"] = agents
+
         with open(project_dir + '/log.pkl', 'wb') as outfile:
             pickle.dump(log, outfile)
 

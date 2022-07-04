@@ -22,6 +22,9 @@ class MetaAgent:
         if not os.path.exists(self.agent_project_dir + "/plots/grids"):
             os.makedirs(self.agent_project_dir + "/plots/grids")
 
+        self.num_coop_values = []
+        self.novelty_values = []
+        self.clustering_values = []
 
 
         self.log_experiments = []
@@ -91,6 +94,9 @@ class MetaAgent:
             clustering = 0
         self.fitness = novelty + num_coops + clustering
         print("agent", self.idx, novelty, num_coops, clustering)
+        self.novelty_values.append(novelty)
+        self.num_coop_values.append(num_coops)
+        self.clustering_values.append(clustering)
 
     def update_strategy(self):
         max_fitness = self.fitness
